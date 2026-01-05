@@ -4140,7 +4140,15 @@ input, select, textarea {
 	  width: 100% !important;
 	}
   }
-  
+
+  @media (max-width: 768px) {
+	#banner .banner-left {
+		flex: 1 1 auto;     /* 520px basis 제거 */
+		min-width: 0;       /* (필요시) 줄어들 수 있게 */
+		height: auto;       /* 내용 기준 */
+	}
+	}
+	
 
   
   }
