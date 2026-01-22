@@ -43,19 +43,41 @@
 										<h1>VISTA: Virtual Styling and Try-On from Any Design</h1>
 									</header>
 									<span class="image main"><img src="images/picture.png" alt=""/></span>
-									<p style="margin:0">기존 연구는 <span style="color:#7ED957; font-weight:600;">디자인 소스가 의류 이미지로 제한</span> → 폭 넓고 창의적인 디자인 소스 적용 불가</p>
-									<p style="margin:0"><span style="color:#ff8c00; font-weight:600;">의류에 대해서만 가상 체험 지원</span> → 신발·가방·목걸이 등 액세서리 포함 코디 지원 부족
+									<p style="margin:0">의류를 디자인하고 입어볼 수 있는 기술(VTON)을 포함한 통합적인 연구가 발전</p>
+									<p style="margin:0"><span style="color:#7ED957; font-weight:600;">디자인 소스가 의류 이미지로 제한</span> → 폭 넓은 미적 감각이 담긴 디자인 소스 적용 불가</p>
+									<p style="margin:0"><span style="color:#ff8c00; font-weight:600;">의류에 대해서만 가상 체험 기능 지원</span> → 신발·가방·목걸이 등 액세서리 포함 전체 코디 지원 부족
 									</p>
 									<span class="image main"><img src="images/feat_teaser3.png" alt=""/></span>
-									<p style="margin:0">→ 의류 이미지 뿐만 아니라 예술 작품, 자연 이미지 등 <span style="color:#ff7c9f; font-weight:600;">다양한 디자인 소스 활용 가능</span>, 액세서리까지 포함한 <span style="color:#ff8c00; font-weight:600;">전체 가상 착장 기능 지원</span></p>
+									<p style="margin:0">→ 의류 이미지 뿐만 아니라 예술 작품, 자연 이미지 등 <span style="color:#ff7c9f; font-weight:600;">다양한 디자인 소스 활용 가능</span>, 액세서리까지 포함한 <span style="color:#ff8c00; font-weight:600;">전체 가상 체험 기능 지원</span></p>
+									<div style="display:flex; gap: 12px;">
+										<span class="image main" style="width: 73%;"><img src="images/sc.png" alt=""/></span>
+										<div style="display:flex; flex-direction: column; gap: 18rem; margin: 3.1rem 0 0 0;">
+											<h4>스타일: 시각적 표현 방식(색상·질감) <br> ex&#41; 하늘색·노란색·붓터치</h4>
+											<h4>콘텐츠: 구조적 정보(형태) <br> ex&#41; 집의 모양</h4>
+										</div>
+									</div>
 									<span class="image main"><img src="images/pipeline.png" alt=""/></span>
 									<p style="margin:0">모달리티별 scale factor 조절로 <b>조건 영향력을 제어하거나 아예 제외할 수도 있음</b></p>
 									<p style="margin:0">U-Net 블록 별 구분과 CS(Content Suppression)을 제안하여, <b>다양한 이미지 소스</b>에서 <b>원하는 요소를 선택적으로 반영</b> 가능</p>
 									<p style="margin:0">Orthogonal Removal과 Noise Fusion을 제안하여 <b>데이터셋 학습 없이 가상 체험</b> 가능</p>
 									<span class="image main"><img src="images/domain.png" alt=""/></span>
-									<p style="margin:0">training-free 구조로 특정 데이터 분포에 대한 과적합 없이 <b>다양한 시각적 도메인</b>에 안정적으로 적용 가능</p>
-									<span class="image main"><img src="images/cs.png" alt=""/></span>
-									<p style="margin:0">원하는 요소를 선택적으로 반영 가능, content는 객체까지 포함한 정보, style은 객체를 제외한 색상이나 질감 같은 시각적 표현 정보</p>
+									<p style="margin:0">training-free 구조 덕분에 특정 데이터 분포에 대한 과적합 없이 <b>다양한 시각적 도메인</b>에 안정적으로 적용 가능</p>
+									<span class="image main"><img src="images/eval_dataset.png" alt=""/></span>
+									<p style="margin:0">평가 데이터셋은 각 모달리티(스케치/텍스트/이미지 프롬프트)를 각 1,000개 규모로 구성</p>
+									<span class="image main"><img src="images/quan_results.png" alt=""/></span>
+									<p style="margin:0">ControlNet + IP 는 의류 잔여물이 남고 콘텐츠 누출 문제로 결과가 부자연스러움</p>
+									<p style="margin:0">PICTURE 는 콘텐츠 누출 현상은 없지만 이미지 프롬프트 반영이 부족하고 액세서리 처리가 불가능함</p>
+									<span class="image main"><img src="images/qual_results.png" alt=""/></span>
+									<p style="margin:0">모든 데이터셋·지표에서 <b>SOTA</b> 달성, 특히 Sketch 점수의 큰 향상은 기존 의류가 잘 제거되고 스케치의 shape이 정확히 반영됨을 의미함</p>
+									<span class="image main"><img src="images/ablation_study.png" alt=""/></span>
+									<p style="margin:0">블록 별 정량적 실험과 각 구성요소의 ablation 실험을 통해 제안 방법의 타당성 입증</p>
+									<div style="display:flex; gap: 12px;">
+										<span class="image main" style="width: 71%;"><img src="images/cs_control.png" alt=""/></span>
+										<div style="display:flex; flex-direction: column; gap: 18rem; margin: 3.1rem 0 0 0;">
+											<h4>콘텐츠 스케일<span style="color:#ee78eed3; font-weight:600;">&uarr;</span>: 0에서는 콘텐츠 반영 X <br> → 0.5에서 작은 콘텐츠(잎/꽃) 반영 <br> → 1.0에서 큰 요소(호랑이)까지 반영</h4>
+											<h4>스타일 스케일<span style="color:#ff759a; font-weight:600;">↑</span>: 스타일 특징 단계적 강화</h4>
+										</div>
+									</div>
 									<span class="image main"><img src="images/random_seed.png" alt=""/></span>
 									<p style="margin:0">random seed 변경만으로 여러 디자인 후보를 손쉽게 탐색 가능</p>
 									<p></p>
